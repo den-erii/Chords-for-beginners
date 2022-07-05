@@ -5,10 +5,11 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.views import View
+from .forms import *
 
 # from home.templates.home.forms import RegisterUserForm
 from home.forms import RegisterUserForm, LoginUserForm
-from home.models import Friends
+from home.models import Friends, Song
 from home.utils import DataMixin, menu
 
 
@@ -70,3 +71,8 @@ class LogoutView(View):
     def dispatch(self, request, *args, **kwargs):
         logout(request)
         return redirect("/")
+
+
+def add_song(request):
+    form = song_form()
+    return render(request, 'home/add_song.html', {'form': form})
