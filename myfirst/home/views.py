@@ -73,6 +73,23 @@ class LogoutView(View):
         return redirect("/")
 
 
+
+
 def add_song(request):
-    form = song_form()
-    return render(request, 'home/add_song.html', {'form': form})
+    if request.method == 'POST':
+        form = song_form(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    else:
+        form = song_form()
+    return render(request, "home/add_song.html", {'form': form})
+
+
+def songs_list(request):
+    songs = Song.objects.all()
+    return render(request, 'home/songs_list.html', {"songs": songs})
+
+def song(request, pk):
+    song = Song.objects.get(pk=pk)
+    return render(request, 'home/song.html', {"song": song})
