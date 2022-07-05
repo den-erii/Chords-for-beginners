@@ -40,8 +40,9 @@
                             <li class="selected"><a href="#">Моя страница</a></li>
                             <li><a href="{% url 'friends' %}">Друзья</a></li>
                             {% if user.is_authenticated %}
-                                <li><a href="#">Добавить песню</a></li>
+                                <li><a href="{% url 'add_song' %}">Добавить песню</a></li>
                             {% endif %}
+                            <li><a href="{% url 'songs_list' %}">Песни</a></li>
                             <li class="share">
                                 <p>Тех. поддержка</p>
                                 <a class="share_yt"
