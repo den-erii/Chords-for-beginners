@@ -1,9 +1,10 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.views import View
 
 # from home.templates.home.forms import RegisterUserForm
 from home.forms import RegisterUserForm, LoginUserForm
@@ -63,3 +64,9 @@ class LoginUser(DataMixin, LoginView):
 def friends(request):
     frds = Friends.objects.all()
     return render(request, 'home/friends.html', locals())
+
+
+class LogoutView(View):
+    def dispatch(self, request, *args, **kwargs):
+        logout(request)
+        return redirect("/")
