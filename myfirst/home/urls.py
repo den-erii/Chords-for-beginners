@@ -11,4 +11,6 @@ urlpatterns = [
     path('friends/', friends, name='friends'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('add_song', add_song, name='add_song'),
+    path('songs/', songs_list, name='songs_list'),
+    path('songs/<int:pk>', song, name='song'),
 ]
