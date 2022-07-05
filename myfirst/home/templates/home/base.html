@@ -21,7 +21,11 @@
                     {% for m in menu %}
                     <li><a href="{% url 'contact' %}">{{m.title}}</a></li>
                     {% endfor %}
-                <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+                {% if user.is_authenticated %}
+                    <li class="last"><a class="btn btn-outline-primary" href="{% url 'logout' %}">Выход</a></li>
+                {% else %}
+                    <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+                {% endif %}
                 </ul>
                 <div class="clear"></div>
             </div>
@@ -34,13 +38,14 @@
                     <td valign="top" class="left-chapters">
                         <ul id="leftchapters">
                             <li class="selected"><a href="#">Моя страница</a></li>
-                            <li><a href="{% url 'friends' %}">друзья</a></li>
-                            <li><a href="#">Сообщения</a></li>
-                            <li><a href="#">Настройки</a></li>
+                            <li><a href="{% url 'friends' %}">Друзья</a></li>
+                            {% if user.is_authenticated %}
+                                <li><a href="#">Добавить песню</a></li>
+                            {% endif %}
                             <li class="share">
                                 <p>Тех. поддержка</p>
                                 <a class="share_yt"
-                                   href="https://www.youtube.com/watch?v=fQIanvUye4o&ab_channel=%D0%91%D0%BB%D0%BE%D0%B3%D0%B5%D1%80%D1%81%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%BE%D0%B9%D0%B1%D1%83%D0%BA%D0%B2%D1%8B"
+                                   href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                                    target="_blank" rel="nofollow"></a>
                             </li>
                         </ul>
