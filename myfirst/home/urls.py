@@ -10,4 +10,5 @@ urlpatterns = [
     path('register/', RegisterUser.as_view(), name='register'),
     path('friends/', friends, name='friends'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('add_song', add_song, name='add_song'),
 ]
