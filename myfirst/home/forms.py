@@ -1,6 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 from django import forms
+from .models import Song
 
 
 class RegisterUserForm(UserCreationForm):
@@ -19,9 +21,7 @@ class LoginUserForm(AuthenticationForm):
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
 
-class song_form(forms.Form):
-    user = forms.CharField(label='Пользователь', max_length=100)
-    author = forms.CharField(label='Автор песни', max_length=100)
-    song_name = forms.CharField(label='Название песни', max_length=100)
-    lyrics = forms.CharField(label='Текст песни', widget=forms.Textarea)
-    song_link = forms.CharField(label='Ссылка на песню(YouTube)', widget=forms.Textarea)
+class song_form(ModelForm):
+    class Meta:
+        model = Song
+        fields =['user', 'author', 'song_name', 'lyrics', 'song_link']
