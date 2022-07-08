@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Результаты поиска
+{% endblock %}
+
+{% block mysongs %}
+<div class="song_list">
+    <ul>
+        <h1>Результаты поиска</h1>
+        <div class="results">
+            {% for song in object_list %}
+                <li>
+                 <h2><a href="{% url 'song' song.id %}">{{ song.author }} - {{ song.song_name }}</a></h2>
+                </li>
+            {% endfor %}
+        </div>
+    </ul>
+    {% endblock %}
+</div>

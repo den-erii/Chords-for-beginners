@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block about %}
+<div class="photos">
+    <div>
+        <div class="about_Den">
+            <img src="{% static 'home/images/den.png' %}" alt="Denis">
+        </div>
+        <div class="button_contact">
+            <a class="btn btn-info" href="https://t.me/den_erii" target="_blank" role="button"><i class="fa-brands fa-telegram"></i> Задать вопрос</a>
+        </div>
+    </div>
+
+    <div>
+        <div class="about_Deog">
+            <img src="{% static 'home/images/deog.png' %}" alt="Deog">
+        </div>
+        <div class="button_contact">
+            <a class="btn btn-info" href="https://t.me/kim_deog_seon" target="_blank" role="button"><i class="fa-brands fa-telegram"></i> Задать вопрос</a>
+        </div>
+    </div>
+</div>
+
+<div class="about_us">
+
+</div>
+
+
+{% endblock %}

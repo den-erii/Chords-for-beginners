@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Список песен
+{% endblock %}
+
+{% block mysongs %}
+    <div class="song_list">
+        {% for song in page_obj %}
+            <h2>
+                <ul>
+                    <li>
+                        <a href="{% url 'song' song.id %}">
+                              {{ song }}
+                        </a>
+
+                    </li>
+                </ul>
+            </h2>
+        {% endfor %}
+
+        <nav class="nav_btn">
+            {% for p in page_obj.paginator.page_range %}
+            <a href="?page={{ p }}" type="button" class="btn btn-secondary btn-sm">{{ p }}</a>
+            {% endfor %}
+        </nav>
+    </div>
+{% endblock %}

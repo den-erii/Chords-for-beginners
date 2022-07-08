@@ -1,0 +1,302 @@
+html, body{
+    background: #2c2c2c;
+}
+
+aside{
+    float: left;
+    background: #181818;
+    width: 20%;
+    padding: 1.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+aside h3{
+    font-size: 32px;
+    margin-top: 120px;
+}
+
+aside ul {
+    list-style: none;
+
+
+
+}
+
+aside img{
+    width: 100px;
+    float: left;
+}
+
+aside .logo_text{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+
+}
+
+.button_contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin-top: 5px;
+}
+
+aside ul a{
+    display: flex;
+    flex: 1 0 auto;
+    min-height: 100%;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+aside ul li{
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover{
+    color: #eb5959;
+    transform: scale(1.05);
+}
+
+.photos{
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    margin-top: 15%;
+}
+
+.about_Den{
+    overflow: hidden;
+    width: 425px;
+    height: 425px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin: 2%;
+}
+
+.about_Deog{
+    overflow: hidden;
+    width: 425px;
+    height: 425px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin: 2%;
+}
+
+.about_us{
+    color: #FF652F;
+    float: left;
+}
+
+.form-label{
+    display: flex;
+    justify-content: flex-start;
+    color: #fff;
+}
+
+.form_center{
+    display: flex;
+    justify-content: center;
+    padding: 2.5%;
+    color: #fff;
+}
+
+.form-error ul{
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.song_list{
+    color: #fff;
+    padding: 1%;
+    left: 50px;
+    margin-top: 5%;
+}
+
+.comment {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    width: 90%;
+    left: 5%;
+}
+
+
+.right {
+    position: absolute;
+    left: 20%;
+    height: 100%;
+    width: 80%;
+    background-image: url('../images/backg.png');
+}
+
+.side {
+    position: fixed;
+}
+
+
+
+.song_list a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.results {
+    position: relative;
+    left: 3%;
+    margin-top: 2%;
+}
+
+.song_list li{list-style: none}
+
+.song_list h2{
+    font-size: 30px;
+}
+
+
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/backg.png');
+}
+
+.full-screen{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.full-screen_body{
+    padding: 50px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: #fff;
+}
+.full-screen_title{
+    font-size: 50px;
+    letter-spacing: 25px;
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+}
+.full-screen_text{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 10px;
+
+}
+
+.arrow{
+    font-size: 50px;
+    letter-spacing: 25px;
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+}
+
+.btn_video{
+    margin-left: -20px;
+}
+
+.full-screen_video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content{
+   background-color: #fff;
+   position: relative;
+   z-index: 5;
+}
+.content_container{
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 50px 15px;
+    font-size: 30px;
+    line-height: 150%;
+}
+
+.content_container p{
+    margin: 0px 0px 20px 0px;
+}
+
+.content_container_song{
+    max-width: 1200px;
+
+    padding: 10px 15px;
+    font-size: 18px;
+
+    color: #fff;
+}
+
+.items_container_song{
+    max-width: 500px;
+    max-height: 500px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+
+
+
+
+
+
+.items{
+    padding: 40px 0;
+}
+.items_container{
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+.items_body{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+.item{}
+
+.item_video{
+    position: relative;
+    margin: 0px 0px 15px 0px;
+    /*aspect-ratio: 16 / 9;*/
+    padding: 0px 0px 56% 0px;
+}
+
+.item_video iframe{
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.item_text{
+    font-size: 18px;
+    line-height: 150%;
+    color: #fff;
+}
+
+
+.notes{
+    display: flex;
+    justify-content: space-around;
+
+}
